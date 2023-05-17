@@ -6,7 +6,7 @@ const Register = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-row w-full gap-20">
-        
+        <Lottie animationData={groovyWalkAnimation} loop={true} />
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <h1 className="text-3xl mt-2 text-center font-bold">Register now!</h1>
                 <form className=" my-2 py-5 px-10">
