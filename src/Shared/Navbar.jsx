@@ -21,7 +21,7 @@ const Navbar = () => {
   
           {/* Nav Items Section */}
           <ul className='items-center hidden space-x-8 lg:flex'>
-            <li>
+            <li className="font-bold">
               <NavLink
                 to='/'
                 className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
@@ -29,20 +29,20 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to='/books'
+            <li className="font-bold">
+              <NavLink 
+                to='/login'
                 className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
               >
-                Books
+                Login
               </NavLink>
             </li>
-            <li>
+            <li className="font-bold">
               <NavLink
-                to='/about'
+                to='/blogs'
                 className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
               >
-                About us
+                Blogs
               </NavLink>
             </li>
           </ul>
@@ -82,25 +82,25 @@ const Navbar = () => {
                   {/* Mobile Nav Items Section */}
                   <nav>
                     <ul className='space-y-4'>
-                      <li>
+                      <li className="font-bold">
                         <Link to='/' className='default'>
                           Home
                         </Link>
                       </li>
-                      <li>
+                      <li className="font-bold">
                         <Link
-                          to='/books'
+                          to='/login'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
                         >
                           Books
                         </Link>
                       </li>
-                      <li>
+                      <li className="font-bold">
                         <Link
-                          to='/about'
+                          to='/blogs'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
                         >
-                          About Us
+                          Blogs
                         </Link>
                       </li>
                     </ul>
