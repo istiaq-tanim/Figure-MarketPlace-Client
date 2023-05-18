@@ -1,12 +1,43 @@
-// import { useState } from "react";
-import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { useContext, useState } from "react";
+import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../assets/134945-zpunet-icon.json";
+import { UserContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-    // const [error, setError] = useState("");
-    // const [success, setSuccess] = useState("");
+    const {login,goggleLogin}=useContext(UserContext)
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+
+    const handleLogin =event =>
+    {
+        event.preventDefault();
+        setSuccess('');
+        setError('');
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        login(email,password)
+        .then(result => {
+            const user=result.user;
+            setSuccess("Logged in Successfully");
+            form.reset();
+            console.log(user)
+        })
+        .catch(error => setError(error.message))
+    }
+
+     
+    const handleGoggle = () =>
+    {
+         goggleLogin()
+         .then(result => {
+            const user=result.user;
+            console.log(user);
+    })
+         .catch(error => setError(error.message))
+    }
     return (
         <div>
             <div className="hero bg-base-200">
@@ -14,7 +45,7 @@ const Login = () => {
                 <Lottie animationData={groovyWalkAnimation} loop={true} />
                     <div className="card flex-shrink-0 w-full h-auto max-w-sm shadow-2xl bg-base-100">
                     <h1 className="text-3xl text-center font-bold mt-3">Login now!</h1>
-                        <form className="card-body pb-2">
+                        <form onSubmit={handleLogin} className="card-body pb-2">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -28,16 +59,15 @@ const Login = () => {
                                 <input type="password" name='password' required placeholder="password" className="input input-bordered" />
                             </div>
 
-                            <p className='text-green-500'></p>
-                            <p className='text-red-500'></p>
+                            <p className='text-green-500'>{success}</p>
+                            <p className='text-red-500'>{error}</p>
                             <div className="form-control mt-2">
                                 <button className="btn btn-info text-white">Login</button>
                             </div>
 
                         </form>
 
-                        <button  className="btn btn-outline w-80  mx-auto my-2"><FaGoogle className='inline-block mr-2'></FaGoogle>Sign in With Google</button>
-                        <button  className="btn btn-outline w-80  mx-auto my-2"><FaGithub className='inline-block mr-2'></FaGithub>Sign in With Github</button>
+                        <button onClick={handleGoggle}  className="btn btn-outline w-80  mx-auto my-2"><FaGoogle className='inline-block mr-2'></FaGoogle>Sign in With Google</button>
                         <p className='text-center'>New Member?<Link to="/register"><button className="btn btn-active px-1 py-0 btn-link">Please Register</button></Link></p>
 
                     </div>
