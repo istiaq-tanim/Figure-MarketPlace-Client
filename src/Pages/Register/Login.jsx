@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../assets/134945-zpunet-icon.json";
 import { UserContext } from "../../Provider/AuthProvider";
@@ -9,6 +9,11 @@ const Login = () => {
     const {login,goggleLogin}=useContext(UserContext)
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    const location=useLocation();
+    const navigate=useNavigate();
+
+
+    let from = location.state?.from?.pathname || "/";
 
     const handleLogin =event =>
     {
@@ -21,6 +26,7 @@ const Login = () => {
         login(email,password)
         .then(result => {
             const user=result.user;
+            navigate(from, { replace: true });
             setSuccess("Logged in Successfully");
             form.reset();
             console.log(user)
@@ -34,6 +40,8 @@ const Login = () => {
          goggleLogin()
          .then(result => {
             const user=result.user;
+            navigate(from, { replace: true });
+            setSuccess("Logged in Successfully");
             console.log(user);
     })
          .catch(error => setError(error.message))
