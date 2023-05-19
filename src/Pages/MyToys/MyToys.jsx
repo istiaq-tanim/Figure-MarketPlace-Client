@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../Provider/AuthProvider";
 import MyToysRow from "./MYToysRow";
+import Swal from 'sweetalert2'
 
 
 const MyToys = () => {
@@ -13,6 +14,39 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [url])
+    const handleDelete = _id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/myToys/${_id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount === 1) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            const remaining = toys.filter(toy => toy._id !== _id)
+                            setToys(remaining);
+                        }
+                    });
+
+            }
+        })
+
+    }
 
     return (
 
@@ -31,7 +65,7 @@ const MyToys = () => {
                 </thead>
                 <tbody>
                     {
-                        toys.map((toy, index) => <MyToysRow key={toy._id} index={index} toy={toy}></MyToysRow>)
+                        toys.map((toy, index) => <MyToysRow key={toy._id} handleDelete={handleDelete} index={index} toy={toy}></MyToysRow>)
                     }
                 </tbody>
             </table>
