@@ -55,6 +55,15 @@ const Navbar = () => {
                   Add Toy
                 </NavLink>
               </li>
+
+              <li className='font-bold'>
+                <NavLink
+                  to='/myToys'
+                  className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
+                >
+                  My Toys
+                </NavLink>
+              </li>
               <button onClick={handleLogOut} className=' btn btn-success py-0 px-2 font-displayRob'>Sign out</button>
             </> :
             <li className='font-bold'>
