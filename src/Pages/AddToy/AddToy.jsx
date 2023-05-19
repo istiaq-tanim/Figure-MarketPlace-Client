@@ -15,13 +15,17 @@ const AddToy = () => {
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
-            .then((result) => {
-                console.log(result);
-                Swal.fire(
-                    'Good job!',
-                    'You clicked the button!',
-                    'success'
-                )
+            .then((data) => {
+                console.log(data);
+                if(data.insertedId)
+                {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
             });
     };
 

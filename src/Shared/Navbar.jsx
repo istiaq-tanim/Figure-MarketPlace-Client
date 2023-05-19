@@ -48,13 +48,13 @@ const Navbar = () => {
                 </div>
               </label>
               <li className='font-bold'>
-              <NavLink
-                to='/addToy'
-                className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
-              >
-                Add Toy
-              </NavLink>
-            </li>
+                <NavLink
+                  to='/addToy'
+                  className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
+                >
+                  Add Toy
+                </NavLink>
+              </li>
               <button onClick={handleLogOut} className=' btn btn-success py-0 px-2 font-displayRob'>Sign out</button>
             </> :
             <li className='font-bold'>
@@ -66,6 +66,15 @@ const Navbar = () => {
               </NavLink>
             </li>
           }
+
+          <li className="font-bold">
+            <NavLink
+              to='/allToys'
+              className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
+            >
+              All Toys
+            </NavLink>
+          </li>
           <li className="font-bold">
             <NavLink
               to='/blogs'
