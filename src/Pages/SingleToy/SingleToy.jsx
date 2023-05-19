@@ -2,15 +2,24 @@ import { useLoaderData } from "react-router-dom";
 
 const SingleToy = () => {
     const toy = useLoaderData();
-    const { _id, name, price, image, rating } = toy
+    const { name, price, image, rating, availableQuantity, description} = toy
     return (
 
-        <div className="max-w-sm rounded mx-auto my-10 overflow-hidden shadow-lg">
-            <img className="w-full h-96"  src={image} alt="Card" />
-            <div className="px-6 py-4 text-center">
+        <div className="max-w-sm rounded mx-auto bg-blue-100 py-5 my-10 overflow-hidden shadow-lg">
+            <img className="w-full h-64 object-contain" src={image} alt="Card" />
+            <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{name}</div>
-                <p className="text-gray-700 text-base">
-                    {rating}
+                <p className=" font-semibold text-base">
+                   <span className="text-blue-500 pr-2">Rating: </span> {rating}
+                </p>
+                <p className=" font-semibold text-base">
+                <span className="text-blue-500 pr-2"> Price: </span> {price}
+                </p>
+                <p className=" font-semibold text-base">
+                <span className="text-blue-500 pr-2"> Available: </span>    {availableQuantity}
+                </p>
+                <p className="text-justify font-semibold text-base">
+                <span className="text-blue-500 ">Description: </span>{description}
                 </p>
             </div>
         </div>

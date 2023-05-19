@@ -8,18 +8,12 @@ import Transformer from './Transformer';
 const Category = () => {
     const [toys, setToys] = useState([])
     const [activeTab, setActiveTab] = useState("Marvel");
-    const [filteredData, setFilteredData] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/toys")
+        fetch(`http://localhost:5000/toys/${activeTab}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [activeTab])
 
-    useEffect(() => {
-        const tabItems = toys.filter(toy => toy.subCategory === activeTab);
-        setFilteredData(tabItems)
-        console.log(tabItems)
-    }, [activeTab])
 
     const handleTab = (tabName) => {
         setActiveTab(tabName);
@@ -27,8 +21,8 @@ const Category = () => {
     }
     return (
         <div className='w-[90%] mx-auto my-10'>
-            <Tabs>
-                <TabList>
+            <Tabs defaultIndex={0}>
+                <TabList className="flex space-x-2 justify-center rounded-xl bg-blue-300 p-2">
                     <Tab onClick={() => handleTab("Marvel")}>Marvel</Tab>
                     <Tab onClick={() => handleTab("DC")}>DC</Tab>
                     <Tab onClick={() => handleTab("Transformers")}>Transformer</Tab>
@@ -37,7 +31,7 @@ const Category = () => {
                 <TabPanel >
                     <div className='grid grid-cols-3 gap-2 mt-5'>
                         {
-                            filteredData.map((toy, index) => <MarvelCategory key={index + 1} toy={toy}></MarvelCategory>)
+                            toys.map((toy, index) => <MarvelCategory key={index + 1} toy={toy}></MarvelCategory>)
                         }
                     </div>
 
@@ -45,7 +39,7 @@ const Category = () => {
                 <TabPanel >
                     <div className='grid grid-cols-3 gap-2 mt-5'>
                         {
-                            filteredData.map((toy, index) => <DcCategory key={index + 1} toy={toy}></DcCategory>)
+                            toys.map((toy, index) => <DcCategory key={index + 1} toy={toy}></DcCategory>)
                         }
                     </div>
                 </TabPanel>
@@ -53,7 +47,7 @@ const Category = () => {
                     <div className='grid grid-cols-3 gap-2 mt-5'>
                         {
 
-                            filteredData.map((toy, index) => <Transformer key={index + 1} toy={toy}></Transformer>)
+                            toys.map((toy, index) => <Transformer key={index + 1} toy={toy}></Transformer>)
 
                         }
                     </div>

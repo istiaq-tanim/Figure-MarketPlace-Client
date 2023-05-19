@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 const MarvelCategory = ({ toy }) => {
     const { _id,name, price, image, rating } = toy
     return (
