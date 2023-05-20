@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 const MyToys = () => {
     const { user } = useContext(UserContext);
 
-    const url = `http://localhost:5000/myToys/?email=${user.email}`
+    const url = `https://assignment-11-toy-market-server.vercel.app/myToys/?email=${user.email}`
     const [toys, setToys] = useState([]);
     useEffect(() => {
         fetch(url)
@@ -26,7 +26,7 @@ const MyToys = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/myToys/${_id}`, {
+                fetch(`https://assignment-11-toy-market-server.vercel.app/myToys/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

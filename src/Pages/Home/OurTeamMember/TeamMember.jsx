@@ -1,8 +1,19 @@
-const TeamMember = () => {
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+const TeamMember = () => { 
+
+    useEffect(() => {
+        AOS.init();
+      }, []);
+    
+    
     return (
-        <div className="w-[90%] mx-auto my-20">
+        <div data-aos="fade-down-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" className="w-[90%] mx-auto my-20">
             <h3 className="text-center text-3xl my-20 text-blue-500 font-bold">Our Team</h3>
-            <div className="grid lg:grid-cols-3 gap-3">
+            <div  className="grid lg:grid-cols-3 gap-3">
                 <div>
                     <img className="w-96 mx-auto rounded-3xl ring hover:ring-[#a574c9] cursor-pointer" src="https://i.ibb.co/TcPpxHZ/young-smiling-man-bearded-businessman-pointing-with-two-finger-upward.jpg" />
                     <h3 className="text-xl font-bold text-center mt-2 text-green-400">Paul Adam</h3>
@@ -10,7 +21,7 @@ const TeamMember = () => {
                 </div>
                 <div>
                     <div>
-                        <img className="w-96 mx-auto rounded-3xl ring hover:ring-[#a574c9] cursor-pointer" src="https://i.ibb.co/hgkzsqt/young-bearded-man-with-striped-shirt.jpg"/>
+                        <img className="w-96 mx-auto rounded-3xl ring hover:ring-[#a574c9] cursor-pointer" src="https://i.ibb.co/hgkzsqt/young-bearded-man-with-striped-shirt.jpg" />
                         <h3 className="text-xl font-bold text-center mt-2 text-green-400">Henry Cavil</h3>
                         <p className="text-lg font-bold text-center mt-2 text-green-400">Chief Financial Officer (CFO)</p>
                     </div>

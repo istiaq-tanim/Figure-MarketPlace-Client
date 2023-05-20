@@ -41,7 +41,7 @@ import ErrorElement from "../Pages/ErrorPage/ErrorElement";
         {
           path:"toy/:id",
           element:<PrivateRoutes><SingleToy></SingleToy></PrivateRoutes>,
-          loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+          loader:({params})=>fetch(`https://assignment-11-toy-market-server.vercel.app/toy/${params.id}`)
         },
         {
           path:"/addToy",
@@ -55,7 +55,7 @@ import ErrorElement from "../Pages/ErrorPage/ErrorElement";
         {
           path:"/singleToy/:id",
           element:<PrivateRoutes><SingleToyDetails></SingleToyDetails></PrivateRoutes>,
-          loader:({params})=>fetch(`http://localhost:5000/singleToyDetails/${params.id}`)
+          loader:({params})=>fetch(`https://assignment-11-toy-market-server.vercel.app/singleToyDetails/${params.id}`)
         },
         {
           path:"/myToys",
@@ -65,7 +65,7 @@ import ErrorElement from "../Pages/ErrorPage/ErrorElement";
         {
           path:"/updateToy/:id",
           element:<UpdateToy></UpdateToy>,
-          loader:({params})=>fetch(`http://localhost:5000/updateToy/${params.id}`)
+          loader:({params})=>fetch(`https://assignment-11-toy-market-server.vercel.app/updateToy/${params.id}`)
         }
       ]
     },

@@ -14,7 +14,7 @@ const AddToy = () => {
         data.subCategory = selectedOption.value;
         console.log(data)
 
-        fetch("http://localhost:5000/addToy", {
+        fetch("https://assignment-11-toy-market-server.vercel.app/addToy", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
