@@ -4,8 +4,10 @@ import groovyWalkAnimation from "../../assets/134945-zpunet-icon.json";
 import { useContext, useState } from "react";
 import { UserContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../../Hooks/useTitle";
 
 const Register = () => {
+    useTitle("Register")
     const [success,setSuccess]=useState("");
     const [error,setError]=useState("")
     const {createUser}=useContext(UserContext)

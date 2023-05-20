@@ -1,4 +1,7 @@
+import useTitle from "../../Hooks/useTitle";
+
 const Blogs = () => {
+    useTitle("Blogs")
     return (
         <div >
             <h3 className='font-display text-center my-10 text-5xl font-bold text-sky-500'>My Blog Page</h3>

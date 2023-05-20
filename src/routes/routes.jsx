@@ -36,7 +36,7 @@ import ErrorElement from "../Pages/ErrorPage/ErrorElement";
         },
         {
           path:"/blogs",
-          element:<PrivateRoutes><Blogs></Blogs></PrivateRoutes>
+          element:<Blogs></Blogs>
         },
         {
           path:"toy/:id",

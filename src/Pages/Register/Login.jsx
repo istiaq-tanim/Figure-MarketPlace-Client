@@ -4,8 +4,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../assets/134945-zpunet-icon.json";
 import { UserContext } from "../../Provider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
+    useTitle("Login")
     const {login,goggleLogin}=useContext(UserContext)
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");

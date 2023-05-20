@@ -3,7 +3,9 @@ import { useForm } from "react-hook-form";
 import Select from 'react-select'
 import { UserContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
+import useTitle from "../../Hooks/useTitle";
 const AddToy = () => {
+    useTitle("Add Toy")
     const { user } = useContext(UserContext);
     const [selectedOption, setSelectedOption] = useState(null);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -148,7 +150,7 @@ const AddToy = () => {
                         <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
                             Sub-category
                         </label>
-                        <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
+                        <Select defaultValue={selectedOption} required onChange={setSelectedOption} options={options} />
                     </div>
                 </div>
 

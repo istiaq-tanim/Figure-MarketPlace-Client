@@ -8,9 +8,7 @@ const Gallery = () => {
       }, []);
     
     return (
-        <div data-aos="fade-down-right"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="2000" className="w-[90%] mx-auto my-20">
+        <div  className="w-[90%] mx-auto my-20 overflow-hidden">
             <h3 className="text-center text-3xl font-semibold text-sky-500 mb-10">Gallery Section</h3>
             <div className="grid grid-cols-3 gap-5">
                 <div>
