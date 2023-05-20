@@ -23,7 +23,6 @@ const Blogs = () => {
                         <p className='text-lg'>Express.js is a lightweight and flexible web application framework for Node.js that offers developers a high level of control over their application structure and components, providing features such as routing, middleware support, and an extensive ecosystem of third-party packages, NestJS, a progressive Node.js framework inspired by Angular, harnesses the power of TypeScript and incorporates concepts from Angular, like decorators, dependency injection, and modules, to provide a scalable and maintainable solution for building server-side applications</p>
                     </div>
                 </div>
-
                 <div className="my-5 card w-full lg:w-1/3 bg-base-100 p-2">
                     <div className="card-body items-center text-center bg-indigo-400 rounded-lg">
                         <h2 className="card-title text-xl">What is MongoDB aggregate and how does it work?</h2>
@@ -32,6 +31,7 @@ const Blogs = () => {
 
                     </div>
                 </div>
+                
             </div>
 
         </div>
