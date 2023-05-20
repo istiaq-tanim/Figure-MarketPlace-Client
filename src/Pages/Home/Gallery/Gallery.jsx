@@ -1,7 +1,7 @@
 const Gallery = () => {
     return (
         <div className="w-[90%] mx-auto my-20">
-            <h3 className="text-center text-3xl font-semibold text-sky-500 mb-10">Our Gallery Section</h3>
+            <h3 className="text-center text-3xl font-semibold text-sky-500 mb-10">Gallery Section</h3>
             <div className="grid grid-cols-3 gap-5">
                 <div>
                     <img className="h-[450px] w-full rounded-xl" src="https://i.ibb.co/SQnYBVd/jeet-dhanoa-s-R1-Ba-Dl-RSKM-unsplash.jpg" />

@@ -1,13 +1,17 @@
 import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
+import TeamMember from "../OurTeamMember/TeamMember";
+import Shipment from "../Shipment/Shipment";
 import Category from "../Tabs/Category";
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Banner></Banner>
             <Gallery></Gallery>
             <Category></Category>
+            <TeamMember></TeamMember>
+            <Shipment></Shipment>
         </div>
     );
 };

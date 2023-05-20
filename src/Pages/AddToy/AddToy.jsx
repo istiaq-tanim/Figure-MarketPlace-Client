@@ -8,7 +8,12 @@ const AddToy = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
+        
+        const intValuePrice=parseInt(data.price);
+        data.price=intValuePrice
         data.subCategory = selectedOption.value;
+        console.log(data)
+
         fetch("http://localhost:5000/addToy", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -60,7 +65,7 @@ const AddToy = () => {
                             defaultValue={user?.displayName}
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.name ? 'border-red-500' : ''}`}
                             placeholder="Seller name"
-                            {...register('seller', { required: 'Name is required' })}
+                            {...register('seller', { required: 'Seller name is required' })}
                         />
                         {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                     </div>
@@ -76,7 +81,7 @@ const AddToy = () => {
                             id="image"
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.name ? 'border-red-500' : ''}`}
                             placeholder="image"
-                            {...register('image', { required: 'Name is required' })}
+                            {...register('image')}
                         />
                         {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                     </div>
@@ -106,7 +111,7 @@ const AddToy = () => {
                             id="price"
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.name ? 'border-red-500' : ''}`}
                             placeholder="Price"
-                            {...register('price', { required: 'Name is required' })}
+                            {...register('price', { required: 'Price is required' })}
                         />
                         {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                     </div>
@@ -120,7 +125,7 @@ const AddToy = () => {
                             rating"
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.name ? 'border-red-500' : ''}`}
                             placeholder="Ratings"
-                            {...register('rating', { required: 'Name is required' })}
+                            {...register('rating', { required: 'Ratings is required' })}
                         />
                         {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                     </div>
@@ -135,7 +140,7 @@ const AddToy = () => {
                             id="availableQuantity"
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.name ? 'border-red-500' : ''}`}
                             placeholder="quantity"
-                            {...register('availableQuantity', { required: 'Name is required' })}
+                            {...register('availableQuantity', { required: 'Quantity is required' })}
                         />
                         {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                     </div>
@@ -155,7 +160,7 @@ const AddToy = () => {
                         id="description"
                         className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.message ? 'border-red-500' : ''}`}
                         placeholder="Description"
-                        {...register('description', { required: 'Message is required' })}
+                        {...register('description', { required: 'Description is required' })}
                     />
                     {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
                 </div>

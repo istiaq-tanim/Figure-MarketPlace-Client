@@ -14,11 +14,13 @@ import AllToys from "../Pages/AllToys/AllToys";
 import SingleToyDetails from "../Pages/SingleToyDetails/SingleToyDetails";
 import MyToys from "../Pages/MyToys/MyToys";
 import UpdateToy from "../Pages/MyToys/UpdateToy";
+import ErrorElement from "../Pages/ErrorPage/ErrorElement";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorElement></ErrorElement>,
       children:[
         {
             path:"/",
@@ -48,7 +50,7 @@ import UpdateToy from "../Pages/MyToys/UpdateToy";
         {
           path:"/allToys",
           element:<AllToys></AllToys>,
-          loader:() => fetch("http://localhost:5000/allToys")
+          
         },
         {
           path:"/singleToy/:id",

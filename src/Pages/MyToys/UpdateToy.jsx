@@ -57,7 +57,7 @@ const UpdateToy = () => {
             </div>
 
 
-            <input type="submit" className="btn btn-block btn-primary border-0" value="Update User" />
+            <input type="submit" className="btn btn-block btn-primary border-0" value="Update Toy" />
         </form>
     </div>
     );
