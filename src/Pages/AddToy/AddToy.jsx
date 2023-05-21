@@ -162,7 +162,7 @@ const AddToy = () => {
                         id="description"
                         className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.message ? 'border-red-500' : ''}`}
                         placeholder="Description"
-                        {...register('description', { required: 'Description is required' })}
+                        {...register('description',)}
                     />
                     {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
                 </div>

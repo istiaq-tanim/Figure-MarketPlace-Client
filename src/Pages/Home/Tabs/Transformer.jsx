@@ -23,7 +23,7 @@ const Transformer = ({ toy }) => {
         <div>
             <div className="card card-compact mt-10 w-96 bg-base-100 shadow-xl">
                 <p>{toy.length}</p>
-                <figure><img className="h-96 w-full" src={image} alt="Shoes" /></figure>
+                <figure><img className="h-96 w-full" src={image}  /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p className="text-blue-500">Price: ${price}</p>

@@ -11,7 +11,10 @@ const MyToysRow = ({toy,index,handleDelete}) => {
             <td>{subCategory}</td>
             <td>${price}</td>
             <td>{availableQuantity}</td>
-            <td className='flex justify-center gap-5'><FaTrash onClick={()=>handleDelete(_id)} className='cursor-pointer text-sky-400'></FaTrash> <Link to={`/updateToy/${_id}`}><FaPen  className='cursor-pointer text-sky-400'></FaPen></Link></td>
+            <td ><FaTrash onClick={()=>handleDelete(_id)} className='cursor-pointer text-xl mx-auto text-sky-400'></FaTrash></td>
+            <td>
+                 <Link to={`/updateToy/${_id}`}><FaPen  className='cursor-pointer text-xl mx-auto text-sky-400'></FaPen></Link>
+            </td>
         </tr>
     );
 };

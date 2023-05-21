@@ -13,7 +13,7 @@ const SingleToyDetails = () => {
     return (
         <div className="flex justify-center m-10">
             <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img className="h-64 object-fill w-full" src={image} alt="Shoes" /></figure>
+                <figure><img className="h-64 object-fill w-full" src={image}  /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-blue-500">{name}</h2>
                     <p><span className="text-blue-500 font-bold pr-2">Email:</span> {email}</p>
