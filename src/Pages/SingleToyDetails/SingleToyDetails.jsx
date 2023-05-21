@@ -1,4 +1,3 @@
-//picture, toy name, seller name, seller email, price, rating, available quantity, and detail description
 
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";

@@ -8,7 +8,6 @@ import Login from "../Pages/Register/Login";
 import Register from "../Pages/Register/Register";
 import Blogs from "../Pages/Blogs/Blogs";
 import PrivateRoutes from "./PrivateRoutes";
-import SingleToy from "../Pages/SingleToy/SingleToy";
 import AddToy from "../Pages/AddToy/AddToy";
 import AllToys from "../Pages/AllToys/AllToys";
 import SingleToyDetails from "../Pages/SingleToyDetails/SingleToyDetails";
@@ -37,11 +36,6 @@ import ErrorElement from "../Pages/ErrorPage/ErrorElement";
         {
           path:"/blogs",
           element:<Blogs></Blogs>
-        },
-        {
-          path:"toy/:id",
-          element:<PrivateRoutes><SingleToy></SingleToy></PrivateRoutes>,
-          loader:({params})=>fetch(`https://assignment-11-toy-market-server.vercel.app/toy/${params.id}`)
         },
         {
           path:"/addToy",

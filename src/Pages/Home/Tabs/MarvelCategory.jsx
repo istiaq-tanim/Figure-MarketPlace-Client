@@ -28,7 +28,7 @@ const MarvelCategory = ({ toy }) => {
                     <p className="text-blue-500 font-bold">Price: {price}</p>
                     <p className="flex gap-2 items-center"><span className="text-blue-500 font-bold">Ratings:</span><Rating style={{ maxWidth: 100 }} value={Math.round(rating) || 0} readOnly /></p>
                     <div className="card-actions justify-end">
-                    <Link to={`/toy/${_id}`}><button onClick={isChecked} className="btn bg-sky-400 border-0">View Details</button></Link>
+                    <Link to={`/singleToy/${_id}`}><button onClick={isChecked} className="btn bg-sky-400 border-0">View Details</button></Link>
                     </div>
                 </div>
             </div>
