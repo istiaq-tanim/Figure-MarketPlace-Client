@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className='relative flex items-center justify-between'>
         {/* Logo Section */}
         <Link to='/' className='inline-flex items-center'>
-          <img className="h-16" src="https://i.ibb.co/JBZVh6R/wolverine-logo.png" alt="wolverine-logo"/>
+          <img className="h-16" src="https://i.ibb.co/JBZVh6R/wolverine-logo.png" alt="wolverine-logo" />
           <span className='ml-2 text-xl font-display font-bold tracking-wide text-gray-800'>
             Figure <span className="text-blue-500 ">Frontier</span>
           </span>
@@ -134,13 +134,49 @@ const Navbar = () => {
                         Home
                       </Link>
                     </li>
+
+                    {user ?
+                      <>
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar tooltip-success tooltip" data-tip={user.displayName}>
+                          <div className="w-10 rounded-full" >
+                            <img src={user.photoURL} />
+                          </div>
+                        </label>
+                        <li className='font-bold'>
+                          <NavLink
+                            to='/addToy'
+                            className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
+                          >
+                            Add Toy
+                          </NavLink>
+                        </li>
+
+                        <li className='font-bold'>
+                          <NavLink
+                            to='/myToys'
+                            className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
+                          >
+                            My Toys
+                          </NavLink>
+                        </li>
+                        <button onClick={handleLogOut} className=' btn btn-success py-0 px-2 font-displayRob'>Sign out</button>
+                      </> :
+                      <li className='font-bold'>
+                        <NavLink
+                          to='/login'
+                          className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
+                        >
+                          Login
+                        </NavLink>
+                      </li>
+                    }
                     <li className="font-bold">
-                      <Link
-                        to='/login'
-                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
+                      <NavLink
+                        to='/allToys'
+                        className={({ isActive }) => (isActive ? 'text-blue-500' : '')}
                       >
-                        Login
-                      </Link>
+                        All Toys
+                      </NavLink>
                     </li>
                     <li className="font-bold">
                       <Link

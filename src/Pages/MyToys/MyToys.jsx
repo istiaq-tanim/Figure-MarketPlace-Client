@@ -9,7 +9,6 @@ const MyToys = () => {
     useTitle("My Toys")
     const { user } = useContext(UserContext);
     const [selectedOption, setSelectedOption] = useState("low");
-
     const handleHigh = text => setSelectedOption(text)
     const handleLow = text => setSelectedOption(text)
     const url = `https://assignment-11-toy-market-server.vercel.app/myToys/${selectedOption}?email=${user.email}`

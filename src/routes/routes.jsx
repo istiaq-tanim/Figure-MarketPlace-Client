@@ -45,7 +45,7 @@ import ErrorElement from "../Pages/ErrorPage/ErrorElement";
         },
         {
           path:"/addToy",
-          element:<AddToy></AddToy>,
+          element:<PrivateRoutes><AddToy></AddToy></PrivateRoutes>,
         },
         {
           path:"/allToys",
@@ -64,7 +64,7 @@ import ErrorElement from "../Pages/ErrorPage/ErrorElement";
         },
         {
           path:"/updateToy/:id",
-          element:<UpdateToy></UpdateToy>,
+          element:<PrivateRoutes><UpdateToy></UpdateToy></PrivateRoutes>,
           loader:({params})=>fetch(`https://assignment-11-toy-market-server.vercel.app/updateToy/${params.id}`)
         }
       ]
