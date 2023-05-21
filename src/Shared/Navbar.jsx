@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className='relative flex items-center justify-between'>
         {/* Logo Section */}
         <Link to='/' className='inline-flex items-center'>
-
+          <img className="h-16" src="https://i.ibb.co/JBZVh6R/wolverine-logo.png" alt="wolverine-logo"/>
           <span className='ml-2 text-xl font-display font-bold tracking-wide text-gray-800'>
             Figure <span className="text-blue-500 ">Frontier</span>
           </span>

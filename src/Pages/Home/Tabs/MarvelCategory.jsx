@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 const MarvelCategory = ({ toy }) => {
     const { _id,name, price, image, rating } = toy
     return (
@@ -8,9 +10,8 @@ const MarvelCategory = ({ toy }) => {
                 <figure><img className="h-96" src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
-                    <p className="text-blue-500">Price: {price}</p>
-                    <p>Ratings {
-                        rating}</p>
+                    <p className="text-blue-500 font-bold">Price: {price}</p>
+                    <p className="flex gap-2 items-center"><span className="text-blue-500 font-bold">Ratings:</span><Rating style={{ maxWidth: 100 }} value={Math.round(rating) || 0} readOnly /></p>
                     <div className="card-actions justify-end">
                     <Link to={`/toy/${_id}`}><button className="btn bg-sky-400 border-0">View Details</button></Link>
                     </div>

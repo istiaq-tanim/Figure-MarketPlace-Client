@@ -11,8 +11,8 @@ const TeamMember = () => {
     return (
         <div data-aos="zoom-in"
         data-aos-easing="ease-out-cubic"
-        data-aos-duration="2000" className="w-[90%] mx-auto my-20 overflow-hidden">
-            <h3 className="text-center text-3xl my-20 text-blue-500 font-bold">Our Team</h3>
+        data-aos-duration="2000" className="w-[90%] mx-auto my-10 overflow-hidden">
+            <h3 className="text-center text-3xl my-10 text-blue-500 font-bold">Our Team</h3>
             <div  className="grid lg:grid-cols-3 gap-3">
                 <div>
                     <img className="w-96 mx-auto rounded-3xl ring hover:ring-[#a574c9] cursor-pointer" src="https://i.ibb.co/TcPpxHZ/young-smiling-man-bearded-businessman-pointing-with-two-finger-upward.jpg" />

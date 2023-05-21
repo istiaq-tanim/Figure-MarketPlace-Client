@@ -8,14 +8,18 @@ import useTitle from "../../Hooks/useTitle";
 const MyToys = () => {
     useTitle("My Toys")
     const { user } = useContext(UserContext);
+    const [selectedOption, setSelectedOption] = useState("low");
 
-    const url = `https://assignment-11-toy-market-server.vercel.app/myToys/?email=${user.email}`
+    const handleHigh = text => setSelectedOption(text)
+    const handleLow = text => setSelectedOption(text)
+    const url = `https://assignment-11-toy-market-server.vercel.app/myToys/${selectedOption}?email=${user.email}`
     const [toys, setToys] = useState([]);
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [url])
+
     const handleDelete = _id => {
         Swal.fire({
             title: 'Are you sure?',
@@ -49,15 +53,21 @@ const MyToys = () => {
         })
 
     }
+    
 
     return (
 
         <div className="overflow-x-auto my-10">
-            <table className="table w-full">
+             <div className="flex gap-3 justify-center">
+             <button onClick={()=>handleLow("low")} className="btn btn-info">Low To High</button>
+             <button onClick={()=>handleHigh("high")} className="btn btn-info">High to Low</button>
+             </div>
+            <table className="table mt-10 w-full">
                 <thead>
                     <tr className="text-center">
                         <th>Serial</th>
                         <th>Seller</th>
+                        <th>Image</th>
                         <th>Toy Name</th>
                         <th>Sub-category</th>
                         <th>Price</th>
